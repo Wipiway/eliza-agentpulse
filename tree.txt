@@ -1,0 +1,2396 @@
+/Users/nj/Workspace/agent-pulse/code/eliza-agentpulse
+├── .DS_Store
+├── .editorconfig
+├── .env
+├── .env.example
+├── .eslintrc.json
+├── .github
+|  ├── ISSUE_TEMPLATE
+|  |  ├── bug_report.md
+|  |  └── feature_request.md
+|  ├── pull_request_template.md
+|  └── workflows
+|     ├── ci.yaml
+|     ├── codeql.yml
+|     ├── generate-changelog.yml
+|     ├── generate-readme-translations.yml
+|     ├── greetings.yml
+|     ├── image.yaml
+|     ├── integrationTests.yaml
+|     ├── jsdoc-automation.yml
+|     ├── pr.yaml
+|     ├── pre-release.yml
+|     ├── release.yaml
+|     ├── require-develop.yml
+|     ├── smoke-tests.yml
+|     └── stale.yml
+├── .gitignore
+├── .gitpod.yml
+├── .npmrc
+├── .nvmrc
+├── .prettierignore
+├── .turbo
+|  ├── cache
+|  |  ├── 0042049e8740569e-meta.json
+|  |  ├── 0042049e8740569e.tar.zst
+|  |  ├── 0124522bc31b6d72-meta.json
+|  |  ├── 0124522bc31b6d72.tar.zst
+|  |  ├── 0673ff22b506d476-meta.json
+|  |  ├── 0673ff22b506d476.tar.zst
+|  |  ├── 0afb7616c50af8b9-meta.json
+|  |  ├── 0afb7616c50af8b9.tar.zst
+|  |  ├── 1273108c21d5158b-meta.json
+|  |  ├── 1273108c21d5158b.tar.zst
+|  |  ├── 1402a2f0a42711b5-meta.json
+|  |  ├── 1402a2f0a42711b5.tar.zst
+|  |  ├── 141c0cb93da06d00-meta.json
+|  |  ├── 141c0cb93da06d00.tar.zst
+|  |  ├── 16ab3041f6942f8d-meta.json
+|  |  ├── 16ab3041f6942f8d.tar.zst
+|  |  ├── 257333edb3105c5d-meta.json
+|  |  ├── 257333edb3105c5d.tar.zst
+|  |  ├── 26ffeca5f1712df1-meta.json
+|  |  ├── 26ffeca5f1712df1.tar.zst
+|  |  ├── 28fbd2da1d9749c5-meta.json
+|  |  ├── 28fbd2da1d9749c5.tar.zst
+|  |  ├── 290cacb04dc5fcd8-meta.json
+|  |  ├── 290cacb04dc5fcd8.tar.zst
+|  |  ├── 2934cf531b5e2012-meta.json
+|  |  ├── 2934cf531b5e2012.tar.zst
+|  |  ├── 29e76d2b92906c97-meta.json
+|  |  ├── 29e76d2b92906c97.tar.zst
+|  |  ├── 29e94c6e14e4c928-meta.json
+|  |  ├── 29e94c6e14e4c928.tar.zst
+|  |  ├── 2a2b33ee5bd2f74e-meta.json
+|  |  ├── 2a2b33ee5bd2f74e.tar.zst
+|  |  ├── 2e85ecbdecfd838c-meta.json
+|  |  ├── 2e85ecbdecfd838c.tar.zst
+|  |  ├── 2ecfcd94aeac1dcd-meta.json
+|  |  ├── 2ecfcd94aeac1dcd.tar.zst
+|  |  ├── 353e3818b5bf1e7c-meta.json
+|  |  ├── 353e3818b5bf1e7c.tar.zst
+|  |  ├── 35618f22cb1e93f7-meta.json
+|  |  ├── 35618f22cb1e93f7.tar.zst
+|  |  ├── 364c44cf3e7792b9-meta.json
+|  |  ├── 364c44cf3e7792b9.tar.zst
+|  |  ├── 3b5fea029f68fa95-meta.json
+|  |  ├── 3b5fea029f68fa95.tar.zst
+|  |  ├── 46aed655c2bcdbed-meta.json
+|  |  ├── 46aed655c2bcdbed.tar.zst
+|  |  ├── 46fb1bfb564a9aac-meta.json
+|  |  ├── 46fb1bfb564a9aac.tar.zst
+|  |  ├── 477103efb65907e7-meta.json
+|  |  ├── 477103efb65907e7.tar.zst
+|  |  ├── 47776a6ecf0bfa1c-meta.json
+|  |  ├── 47776a6ecf0bfa1c.tar.zst
+|  |  ├── 4a9bbd6fc1a08bac-meta.json
+|  |  ├── 4a9bbd6fc1a08bac.tar.zst
+|  |  ├── 4c1807fce4b5aef4-meta.json
+|  |  ├── 4c1807fce4b5aef4.tar.zst
+|  |  ├── 4d3f19498955f2de-meta.json
+|  |  ├── 4d3f19498955f2de.tar.zst
+|  |  ├── 4db3d29886ecc883-meta.json
+|  |  ├── 4db3d29886ecc883.tar.zst
+|  |  ├── 50c47dbe17cae0bd-meta.json
+|  |  ├── 50c47dbe17cae0bd.tar.zst
+|  |  ├── 51c982d82b0f44d6-meta.json
+|  |  ├── 51c982d82b0f44d6.tar.zst
+|  |  ├── 52121bce654584b1-meta.json
+|  |  ├── 52121bce654584b1.tar.zst
+|  |  ├── 590678a950dd7078-meta.json
+|  |  ├── 590678a950dd7078.tar.zst
+|  |  ├── 595e2cd1b5fad479-meta.json
+|  |  ├── 595e2cd1b5fad479.tar.zst
+|  |  ├── 59fe216b3c6240ac-meta.json
+|  |  ├── 59fe216b3c6240ac.tar.zst
+|  |  ├── 5a7cd742745d74bb-meta.json
+|  |  ├── 5a7cd742745d74bb.tar.zst
+|  |  ├── 61e3fe4c9e118693-meta.json
+|  |  ├── 61e3fe4c9e118693.tar.zst
+|  |  ├── 69c1ba085a2ebfdf-meta.json
+|  |  ├── 69c1ba085a2ebfdf.tar.zst
+|  |  ├── 6a7d6d68baecd8e3-meta.json
+|  |  ├── 6a7d6d68baecd8e3.tar.zst
+|  |  ├── 6c171db220bd6244-meta.json
+|  |  ├── 6c171db220bd6244.tar.zst
+|  |  ├── 71c2a146ce49cb25-meta.json
+|  |  ├── 71c2a146ce49cb25.tar.zst
+|  |  ├── 73a055c24e84ef8a-meta.json
+|  |  ├── 73a055c24e84ef8a.tar.zst
+|  |  ├── 75372dd6dc125241-meta.json
+|  |  ├── 75372dd6dc125241.tar.zst
+|  |  ├── 79cdd0a5950e7fd2-meta.json
+|  |  ├── 79cdd0a5950e7fd2.tar.zst
+|  |  ├── 7b9ccc5bf62f9a3d-meta.json
+|  |  ├── 7b9ccc5bf62f9a3d.tar.zst
+|  |  ├── 7ba891badeb85d77-meta.json
+|  |  ├── 7ba891badeb85d77.tar.zst
+|  |  ├── 7bfce74f2beb0de2-meta.json
+|  |  ├── 7bfce74f2beb0de2.tar.zst
+|  |  ├── 7def3eee91db184a-meta.json
+|  |  ├── 7def3eee91db184a.tar.zst
+|  |  ├── 80c409dccbb1cbef-meta.json
+|  |  ├── 80c409dccbb1cbef.tar.zst
+|  |  ├── 825dfeeb6712ab4f-meta.json
+|  |  ├── 825dfeeb6712ab4f.tar.zst
+|  |  ├── 838ec95e1b29e784-meta.json
+|  |  ├── 838ec95e1b29e784.tar.zst
+|  |  ├── 88ec30a5ef7d4372-meta.json
+|  |  ├── 88ec30a5ef7d4372.tar.zst
+|  |  ├── 88f07dcde590c3b9-meta.json
+|  |  ├── 88f07dcde590c3b9.tar.zst
+|  |  ├── 89a5d5d90b633bf8-meta.json
+|  |  ├── 89a5d5d90b633bf8.tar.zst
+|  |  ├── 8b13ea9cb9d2bb41-meta.json
+|  |  ├── 8b13ea9cb9d2bb41.tar.zst
+|  |  ├── 8ccf63f8dc2005e9-meta.json
+|  |  ├── 8ccf63f8dc2005e9.tar.zst
+|  |  ├── 8e8cd963d2dfac45-meta.json
+|  |  ├── 8e8cd963d2dfac45.tar.zst
+|  |  ├── 924eeccf521822d5-meta.json
+|  |  ├── 924eeccf521822d5.tar.zst
+|  |  ├── 9395f4b40383d380-meta.json
+|  |  ├── 9395f4b40383d380.tar.zst
+|  |  ├── 99b9bc835604d5c8-meta.json
+|  |  ├── 99b9bc835604d5c8.tar.zst
+|  |  ├── 99f70cc2964c934c-meta.json
+|  |  ├── 99f70cc2964c934c.tar.zst
+|  |  ├── 9d049343d94252d7-meta.json
+|  |  ├── 9d049343d94252d7.tar.zst
+|  |  ├── 9e5075596ffab9c7-meta.json
+|  |  ├── 9e5075596ffab9c7.tar.zst
+|  |  ├── a30499588056d07c-meta.json
+|  |  ├── a30499588056d07c.tar.zst
+|  |  ├── ab17d2b1d5a36b57-meta.json
+|  |  ├── ab17d2b1d5a36b57.tar.zst
+|  |  ├── acc24edbf07e13d7-meta.json
+|  |  ├── acc24edbf07e13d7.tar.zst
+|  |  ├── adb9885f163e1863-meta.json
+|  |  ├── adb9885f163e1863.tar.zst
+|  |  ├── b3443960337b2088-meta.json
+|  |  ├── b3443960337b2088.tar.zst
+|  |  ├── b471c9b355718a4c-meta.json
+|  |  ├── b471c9b355718a4c.tar.zst
+|  |  ├── b90681a8b898f595-meta.json
+|  |  ├── b90681a8b898f595.tar.zst
+|  |  ├── b9525c311fe405be-meta.json
+|  |  ├── b9525c311fe405be.tar.zst
+|  |  ├── bb33133ee9731898-meta.json
+|  |  ├── bb33133ee9731898.tar.zst
+|  |  ├── bc0993033cb374bb-meta.json
+|  |  ├── bc0993033cb374bb.tar.zst
+|  |  ├── bf44818982ad0ccd-meta.json
+|  |  ├── bf44818982ad0ccd.tar.zst
+|  |  ├── c0dd58acedec438d-meta.json
+|  |  ├── c0dd58acedec438d.tar.zst
+|  |  ├── c40fa54acd6498af-meta.json
+|  |  ├── c40fa54acd6498af.tar.zst
+|  |  ├── c5609331a9da10e1-meta.json
+|  |  ├── c5609331a9da10e1.tar.zst
+|  |  ├── c5d7a5b49459efe5-meta.json
+|  |  ├── c5d7a5b49459efe5.tar.zst
+|  |  ├── c6caaf504b964ed1-meta.json
+|  |  ├── c6caaf504b964ed1.tar.zst
+|  |  ├── ca1ac15532d46242-meta.json
+|  |  ├── ca1ac15532d46242.tar.zst
+|  |  ├── cbb2d1aeb73bb1b0-meta.json
+|  |  ├── cbb2d1aeb73bb1b0.tar.zst
+|  |  ├── cbb5a4347e4df3d1-meta.json
+|  |  ├── cbb5a4347e4df3d1.tar.zst
+|  |  ├── cd2945ac2c1aea2c-meta.json
+|  |  ├── cd2945ac2c1aea2c.tar.zst
+|  |  ├── d846ddda0e6b4fa6-meta.json
+|  |  ├── d846ddda0e6b4fa6.tar.zst
+|  |  ├── d8584528f4f1f865-meta.json
+|  |  ├── d8584528f4f1f865.tar.zst
+|  |  ├── d9708d0320da65c9-meta.json
+|  |  ├── d9708d0320da65c9.tar.zst
+|  |  ├── e12f5413e1e5a9a0-meta.json
+|  |  ├── e12f5413e1e5a9a0.tar.zst
+|  |  ├── e21a4534eb06c317-meta.json
+|  |  ├── e21a4534eb06c317.tar.zst
+|  |  ├── e283f58a6fccdbda-meta.json
+|  |  ├── e283f58a6fccdbda.tar.zst
+|  |  ├── e54d7cb134b3cae3-meta.json
+|  |  ├── e54d7cb134b3cae3.tar.zst
+|  |  ├── e6e9d9fb35db412a-meta.json
+|  |  ├── e6e9d9fb35db412a.tar.zst
+|  |  ├── e89dc07d42f30daa-meta.json
+|  |  ├── e89dc07d42f30daa.tar.zst
+|  |  ├── e90f8d70f65dc2f0-meta.json
+|  |  ├── e90f8d70f65dc2f0.tar.zst
+|  |  ├── ea261eee14e36d71-meta.json
+|  |  ├── ea261eee14e36d71.tar.zst
+|  |  ├── ec15f8a6ff7def09-meta.json
+|  |  ├── ec15f8a6ff7def09.tar.zst
+|  |  ├── ed954eab7b1ecbd9-meta.json
+|  |  ├── ed954eab7b1ecbd9.tar.zst
+|  |  ├── ee400d7f911c2bbc-meta.json
+|  |  ├── ee400d7f911c2bbc.tar.zst
+|  |  ├── effe6def8497f989-meta.json
+|  |  ├── effe6def8497f989.tar.zst
+|  |  ├── f2c06c7dbfc29a89-meta.json
+|  |  ├── f2c06c7dbfc29a89.tar.zst
+|  |  ├── f3c7db877f1bd654-meta.json
+|  |  ├── f3c7db877f1bd654.tar.zst
+|  |  ├── f5658702ee61a597-meta.json
+|  |  ├── f5658702ee61a597.tar.zst
+|  |  ├── f78d0930d465040f-meta.json
+|  |  ├── f78d0930d465040f.tar.zst
+|  |  ├── f966cacabe7c5499-meta.json
+|  |  ├── f966cacabe7c5499.tar.zst
+|  |  ├── fbf0f513e5d7818d-meta.json
+|  |  └── fbf0f513e5d7818d.tar.zst
+|  ├── cookies
+|  |  ├── 1.cookie
+|  |  ├── 10.cookie
+|  |  ├── 100.cookie
+|  |  ├── 101.cookie
+|  |  ├── 102.cookie
+|  |  ├── 103.cookie
+|  |  ├── 104.cookie
+|  |  ├── 105.cookie
+|  |  ├── 106.cookie
+|  |  ├── 107.cookie
+|  |  ├── 108.cookie
+|  |  ├── 109.cookie
+|  |  ├── 11.cookie
+|  |  ├── 110.cookie
+|  |  ├── 111.cookie
+|  |  ├── 112.cookie
+|  |  ├── 113.cookie
+|  |  ├── 114.cookie
+|  |  ├── 115.cookie
+|  |  ├── 116.cookie
+|  |  ├── 117.cookie
+|  |  ├── 118.cookie
+|  |  ├── 119.cookie
+|  |  ├── 12.cookie
+|  |  ├── 120.cookie
+|  |  ├── 121.cookie
+|  |  ├── 122.cookie
+|  |  ├── 123.cookie
+|  |  ├── 124.cookie
+|  |  ├── 125.cookie
+|  |  ├── 126.cookie
+|  |  ├── 127.cookie
+|  |  ├── 128.cookie
+|  |  ├── 129.cookie
+|  |  ├── 13.cookie
+|  |  ├── 130.cookie
+|  |  ├── 131.cookie
+|  |  ├── 132.cookie
+|  |  ├── 133.cookie
+|  |  ├── 134.cookie
+|  |  ├── 135.cookie
+|  |  ├── 136.cookie
+|  |  ├── 137.cookie
+|  |  ├── 138.cookie
+|  |  ├── 139.cookie
+|  |  ├── 14.cookie
+|  |  ├── 140.cookie
+|  |  ├── 141.cookie
+|  |  ├── 142.cookie
+|  |  ├── 143.cookie
+|  |  ├── 144.cookie
+|  |  ├── 145.cookie
+|  |  ├── 146.cookie
+|  |  ├── 147.cookie
+|  |  ├── 148.cookie
+|  |  ├── 149.cookie
+|  |  ├── 15.cookie
+|  |  ├── 150.cookie
+|  |  ├── 151.cookie
+|  |  ├── 152.cookie
+|  |  ├── 153.cookie
+|  |  ├── 154.cookie
+|  |  ├── 155.cookie
+|  |  ├── 156.cookie
+|  |  ├── 157.cookie
+|  |  ├── 158.cookie
+|  |  ├── 159.cookie
+|  |  ├── 16.cookie
+|  |  ├── 160.cookie
+|  |  ├── 161.cookie
+|  |  ├── 162.cookie
+|  |  ├── 163.cookie
+|  |  ├── 164.cookie
+|  |  ├── 165.cookie
+|  |  ├── 166.cookie
+|  |  ├── 167.cookie
+|  |  ├── 168.cookie
+|  |  ├── 169.cookie
+|  |  ├── 17.cookie
+|  |  ├── 170.cookie
+|  |  ├── 171.cookie
+|  |  ├── 172.cookie
+|  |  ├── 173.cookie
+|  |  ├── 174.cookie
+|  |  ├── 175.cookie
+|  |  ├── 176.cookie
+|  |  ├── 177.cookie
+|  |  ├── 178.cookie
+|  |  ├── 179.cookie
+|  |  ├── 18.cookie
+|  |  ├── 180.cookie
+|  |  ├── 181.cookie
+|  |  ├── 182.cookie
+|  |  ├── 183.cookie
+|  |  ├── 184.cookie
+|  |  ├── 185.cookie
+|  |  ├── 186.cookie
+|  |  ├── 187.cookie
+|  |  ├── 188.cookie
+|  |  ├── 189.cookie
+|  |  ├── 19.cookie
+|  |  ├── 190.cookie
+|  |  ├── 191.cookie
+|  |  ├── 192.cookie
+|  |  ├── 193.cookie
+|  |  ├── 194.cookie
+|  |  ├── 195.cookie
+|  |  ├── 196.cookie
+|  |  ├── 197.cookie
+|  |  ├── 198.cookie
+|  |  ├── 199.cookie
+|  |  ├── 2.cookie
+|  |  ├── 20.cookie
+|  |  ├── 200.cookie
+|  |  ├── 201.cookie
+|  |  ├── 202.cookie
+|  |  ├── 203.cookie
+|  |  ├── 204.cookie
+|  |  ├── 205.cookie
+|  |  ├── 206.cookie
+|  |  ├── 207.cookie
+|  |  ├── 208.cookie
+|  |  ├── 209.cookie
+|  |  ├── 21.cookie
+|  |  ├── 210.cookie
+|  |  ├── 211.cookie
+|  |  ├── 212.cookie
+|  |  ├── 213.cookie
+|  |  ├── 214.cookie
+|  |  ├── 215.cookie
+|  |  ├── 216.cookie
+|  |  ├── 217.cookie
+|  |  ├── 218.cookie
+|  |  ├── 219.cookie
+|  |  ├── 22.cookie
+|  |  ├── 220.cookie
+|  |  ├── 221.cookie
+|  |  ├── 222.cookie
+|  |  ├── 223.cookie
+|  |  ├── 224.cookie
+|  |  ├── 225.cookie
+|  |  ├── 226.cookie
+|  |  ├── 227.cookie
+|  |  ├── 228.cookie
+|  |  ├── 229.cookie
+|  |  ├── 23.cookie
+|  |  ├── 230.cookie
+|  |  ├── 231.cookie
+|  |  ├── 232.cookie
+|  |  ├── 233.cookie
+|  |  ├── 234.cookie
+|  |  ├── 235.cookie
+|  |  ├── 236.cookie
+|  |  ├── 237.cookie
+|  |  ├── 238.cookie
+|  |  ├── 239.cookie
+|  |  ├── 24.cookie
+|  |  ├── 240.cookie
+|  |  ├── 241.cookie
+|  |  ├── 242.cookie
+|  |  ├── 243.cookie
+|  |  ├── 244.cookie
+|  |  ├── 245.cookie
+|  |  ├── 246.cookie
+|  |  ├── 247.cookie
+|  |  ├── 248.cookie
+|  |  ├── 249.cookie
+|  |  ├── 25.cookie
+|  |  ├── 250.cookie
+|  |  ├── 251.cookie
+|  |  ├── 252.cookie
+|  |  ├── 253.cookie
+|  |  ├── 254.cookie
+|  |  ├── 255.cookie
+|  |  ├── 256.cookie
+|  |  ├── 257.cookie
+|  |  ├── 258.cookie
+|  |  ├── 259.cookie
+|  |  ├── 26.cookie
+|  |  ├── 260.cookie
+|  |  ├── 261.cookie
+|  |  ├── 262.cookie
+|  |  ├── 263.cookie
+|  |  ├── 264.cookie
+|  |  ├── 265.cookie
+|  |  ├── 266.cookie
+|  |  ├── 267.cookie
+|  |  ├── 268.cookie
+|  |  ├── 269.cookie
+|  |  ├── 27.cookie
+|  |  ├── 270.cookie
+|  |  ├── 271.cookie
+|  |  ├── 272.cookie
+|  |  ├── 273.cookie
+|  |  ├── 274.cookie
+|  |  ├── 275.cookie
+|  |  ├── 276.cookie
+|  |  ├── 277.cookie
+|  |  ├── 278.cookie
+|  |  ├── 279.cookie
+|  |  ├── 28.cookie
+|  |  ├── 280.cookie
+|  |  ├── 281.cookie
+|  |  ├── 282.cookie
+|  |  ├── 283.cookie
+|  |  ├── 284.cookie
+|  |  ├── 285.cookie
+|  |  ├── 286.cookie
+|  |  ├── 287.cookie
+|  |  ├── 288.cookie
+|  |  ├── 289.cookie
+|  |  ├── 29.cookie
+|  |  ├── 290.cookie
+|  |  ├── 291.cookie
+|  |  ├── 292.cookie
+|  |  ├── 293.cookie
+|  |  ├── 294.cookie
+|  |  ├── 295.cookie
+|  |  ├── 296.cookie
+|  |  ├── 297.cookie
+|  |  ├── 298.cookie
+|  |  ├── 299.cookie
+|  |  ├── 3.cookie
+|  |  ├── 30.cookie
+|  |  ├── 300.cookie
+|  |  ├── 301.cookie
+|  |  ├── 302.cookie
+|  |  ├── 303.cookie
+|  |  ├── 304.cookie
+|  |  ├── 305.cookie
+|  |  ├── 306.cookie
+|  |  ├── 307.cookie
+|  |  ├── 308.cookie
+|  |  ├── 309.cookie
+|  |  ├── 31.cookie
+|  |  ├── 310.cookie
+|  |  ├── 311.cookie
+|  |  ├── 312.cookie
+|  |  ├── 313.cookie
+|  |  ├── 314.cookie
+|  |  ├── 315.cookie
+|  |  ├── 316.cookie
+|  |  ├── 317.cookie
+|  |  ├── 318.cookie
+|  |  ├── 319.cookie
+|  |  ├── 32.cookie
+|  |  ├── 320.cookie
+|  |  ├── 321.cookie
+|  |  ├── 322.cookie
+|  |  ├── 323.cookie
+|  |  ├── 324.cookie
+|  |  ├── 325.cookie
+|  |  ├── 326.cookie
+|  |  ├── 327.cookie
+|  |  ├── 328.cookie
+|  |  ├── 329.cookie
+|  |  ├── 33.cookie
+|  |  ├── 330.cookie
+|  |  ├── 331.cookie
+|  |  ├── 332.cookie
+|  |  ├── 333.cookie
+|  |  ├── 334.cookie
+|  |  ├── 335.cookie
+|  |  ├── 336.cookie
+|  |  ├── 337.cookie
+|  |  ├── 338.cookie
+|  |  ├── 339.cookie
+|  |  ├── 34.cookie
+|  |  ├── 340.cookie
+|  |  ├── 341.cookie
+|  |  ├── 342.cookie
+|  |  ├── 343.cookie
+|  |  ├── 344.cookie
+|  |  ├── 345.cookie
+|  |  ├── 346.cookie
+|  |  ├── 347.cookie
+|  |  ├── 348.cookie
+|  |  ├── 349.cookie
+|  |  ├── 35.cookie
+|  |  ├── 350.cookie
+|  |  ├── 351.cookie
+|  |  ├── 352.cookie
+|  |  ├── 353.cookie
+|  |  ├── 354.cookie
+|  |  ├── 355.cookie
+|  |  ├── 356.cookie
+|  |  ├── 357.cookie
+|  |  ├── 358.cookie
+|  |  ├── 359.cookie
+|  |  ├── 36.cookie
+|  |  ├── 360.cookie
+|  |  ├── 361.cookie
+|  |  ├── 362.cookie
+|  |  ├── 363.cookie
+|  |  ├── 364.cookie
+|  |  ├── 365.cookie
+|  |  ├── 366.cookie
+|  |  ├── 367.cookie
+|  |  ├── 368.cookie
+|  |  ├── 369.cookie
+|  |  ├── 37.cookie
+|  |  ├── 370.cookie
+|  |  ├── 371.cookie
+|  |  ├── 372.cookie
+|  |  ├── 373.cookie
+|  |  ├── 374.cookie
+|  |  ├── 375.cookie
+|  |  ├── 376.cookie
+|  |  ├── 377.cookie
+|  |  ├── 378.cookie
+|  |  ├── 379.cookie
+|  |  ├── 38.cookie
+|  |  ├── 380.cookie
+|  |  ├── 381.cookie
+|  |  ├── 382.cookie
+|  |  ├── 383.cookie
+|  |  ├── 384.cookie
+|  |  ├── 385.cookie
+|  |  ├── 386.cookie
+|  |  ├── 387.cookie
+|  |  ├── 388.cookie
+|  |  ├── 389.cookie
+|  |  ├── 39.cookie
+|  |  ├── 390.cookie
+|  |  ├── 391.cookie
+|  |  ├── 392.cookie
+|  |  ├── 393.cookie
+|  |  ├── 394.cookie
+|  |  ├── 395.cookie
+|  |  ├── 396.cookie
+|  |  ├── 397.cookie
+|  |  ├── 398.cookie
+|  |  ├── 399.cookie
+|  |  ├── 4.cookie
+|  |  ├── 40.cookie
+|  |  ├── 400.cookie
+|  |  ├── 401.cookie
+|  |  ├── 402.cookie
+|  |  ├── 403.cookie
+|  |  ├── 404.cookie
+|  |  ├── 405.cookie
+|  |  ├── 406.cookie
+|  |  ├── 407.cookie
+|  |  ├── 408.cookie
+|  |  ├── 409.cookie
+|  |  ├── 41.cookie
+|  |  ├── 410.cookie
+|  |  ├── 411.cookie
+|  |  ├── 412.cookie
+|  |  ├── 413.cookie
+|  |  ├── 414.cookie
+|  |  ├── 415.cookie
+|  |  ├── 416.cookie
+|  |  ├── 417.cookie
+|  |  ├── 418.cookie
+|  |  ├── 419.cookie
+|  |  ├── 42.cookie
+|  |  ├── 420.cookie
+|  |  ├── 421.cookie
+|  |  ├── 422.cookie
+|  |  ├── 423.cookie
+|  |  ├── 424.cookie
+|  |  ├── 425.cookie
+|  |  ├── 426.cookie
+|  |  ├── 427.cookie
+|  |  ├── 428.cookie
+|  |  ├── 429.cookie
+|  |  ├── 43.cookie
+|  |  ├── 430.cookie
+|  |  ├── 431.cookie
+|  |  ├── 432.cookie
+|  |  ├── 433.cookie
+|  |  ├── 434.cookie
+|  |  ├── 435.cookie
+|  |  ├── 436.cookie
+|  |  ├── 437.cookie
+|  |  ├── 438.cookie
+|  |  ├── 439.cookie
+|  |  ├── 44.cookie
+|  |  ├── 440.cookie
+|  |  ├── 441.cookie
+|  |  ├── 442.cookie
+|  |  ├── 443.cookie
+|  |  ├── 444.cookie
+|  |  ├── 445.cookie
+|  |  ├── 446.cookie
+|  |  ├── 447.cookie
+|  |  ├── 448.cookie
+|  |  ├── 449.cookie
+|  |  ├── 45.cookie
+|  |  ├── 450.cookie
+|  |  ├── 451.cookie
+|  |  ├── 452.cookie
+|  |  ├── 453.cookie
+|  |  ├── 454.cookie
+|  |  ├── 455.cookie
+|  |  ├── 456.cookie
+|  |  ├── 457.cookie
+|  |  ├── 458.cookie
+|  |  ├── 459.cookie
+|  |  ├── 46.cookie
+|  |  ├── 460.cookie
+|  |  ├── 461.cookie
+|  |  ├── 462.cookie
+|  |  ├── 463.cookie
+|  |  ├── 464.cookie
+|  |  ├── 465.cookie
+|  |  ├── 466.cookie
+|  |  ├── 467.cookie
+|  |  ├── 468.cookie
+|  |  ├── 469.cookie
+|  |  ├── 47.cookie
+|  |  ├── 470.cookie
+|  |  ├── 471.cookie
+|  |  ├── 472.cookie
+|  |  ├── 473.cookie
+|  |  ├── 474.cookie
+|  |  ├── 475.cookie
+|  |  ├── 476.cookie
+|  |  ├── 477.cookie
+|  |  ├── 478.cookie
+|  |  ├── 479.cookie
+|  |  ├── 48.cookie
+|  |  ├── 480.cookie
+|  |  ├── 481.cookie
+|  |  ├── 482.cookie
+|  |  ├── 483.cookie
+|  |  ├── 484.cookie
+|  |  ├── 485.cookie
+|  |  ├── 486.cookie
+|  |  ├── 487.cookie
+|  |  ├── 488.cookie
+|  |  ├── 489.cookie
+|  |  ├── 49.cookie
+|  |  ├── 490.cookie
+|  |  ├── 491.cookie
+|  |  ├── 492.cookie
+|  |  ├── 493.cookie
+|  |  ├── 494.cookie
+|  |  ├── 495.cookie
+|  |  ├── 496.cookie
+|  |  ├── 497.cookie
+|  |  ├── 498.cookie
+|  |  ├── 499.cookie
+|  |  ├── 5.cookie
+|  |  ├── 50.cookie
+|  |  ├── 500.cookie
+|  |  ├── 501.cookie
+|  |  ├── 502.cookie
+|  |  ├── 503.cookie
+|  |  ├── 504.cookie
+|  |  ├── 505.cookie
+|  |  ├── 506.cookie
+|  |  ├── 507.cookie
+|  |  ├── 508.cookie
+|  |  ├── 509.cookie
+|  |  ├── 51.cookie
+|  |  ├── 510.cookie
+|  |  ├── 511.cookie
+|  |  ├── 512.cookie
+|  |  ├── 513.cookie
+|  |  ├── 514.cookie
+|  |  ├── 515.cookie
+|  |  ├── 516.cookie
+|  |  ├── 517.cookie
+|  |  ├── 518.cookie
+|  |  ├── 519.cookie
+|  |  ├── 52.cookie
+|  |  ├── 520.cookie
+|  |  ├── 521.cookie
+|  |  ├── 522.cookie
+|  |  ├── 523.cookie
+|  |  ├── 524.cookie
+|  |  ├── 525.cookie
+|  |  ├── 526.cookie
+|  |  ├── 527.cookie
+|  |  ├── 528.cookie
+|  |  ├── 529.cookie
+|  |  ├── 53.cookie
+|  |  ├── 530.cookie
+|  |  ├── 531.cookie
+|  |  ├── 532.cookie
+|  |  ├── 533.cookie
+|  |  ├── 534.cookie
+|  |  ├── 535.cookie
+|  |  ├── 536.cookie
+|  |  ├── 537.cookie
+|  |  ├── 538.cookie
+|  |  ├── 539.cookie
+|  |  ├── 54.cookie
+|  |  ├── 540.cookie
+|  |  ├── 541.cookie
+|  |  ├── 542.cookie
+|  |  ├── 543.cookie
+|  |  ├── 544.cookie
+|  |  ├── 545.cookie
+|  |  ├── 546.cookie
+|  |  ├── 547.cookie
+|  |  ├── 548.cookie
+|  |  ├── 549.cookie
+|  |  ├── 55.cookie
+|  |  ├── 550.cookie
+|  |  ├── 551.cookie
+|  |  ├── 552.cookie
+|  |  ├── 553.cookie
+|  |  ├── 554.cookie
+|  |  ├── 555.cookie
+|  |  ├── 556.cookie
+|  |  ├── 557.cookie
+|  |  ├── 558.cookie
+|  |  ├── 559.cookie
+|  |  ├── 56.cookie
+|  |  ├── 560.cookie
+|  |  ├── 561.cookie
+|  |  ├── 562.cookie
+|  |  ├── 563.cookie
+|  |  ├── 564.cookie
+|  |  ├── 565.cookie
+|  |  ├── 566.cookie
+|  |  ├── 567.cookie
+|  |  ├── 568.cookie
+|  |  ├── 569.cookie
+|  |  ├── 57.cookie
+|  |  ├── 570.cookie
+|  |  ├── 571.cookie
+|  |  ├── 572.cookie
+|  |  ├── 573.cookie
+|  |  ├── 574.cookie
+|  |  ├── 575.cookie
+|  |  ├── 576.cookie
+|  |  ├── 577.cookie
+|  |  ├── 578.cookie
+|  |  ├── 579.cookie
+|  |  ├── 58.cookie
+|  |  ├── 580.cookie
+|  |  ├── 581.cookie
+|  |  ├── 582.cookie
+|  |  ├── 583.cookie
+|  |  ├── 584.cookie
+|  |  ├── 585.cookie
+|  |  ├── 586.cookie
+|  |  ├── 587.cookie
+|  |  ├── 588.cookie
+|  |  ├── 589.cookie
+|  |  ├── 59.cookie
+|  |  ├── 590.cookie
+|  |  ├── 591.cookie
+|  |  ├── 592.cookie
+|  |  ├── 593.cookie
+|  |  ├── 594.cookie
+|  |  ├── 595.cookie
+|  |  ├── 596.cookie
+|  |  ├── 597.cookie
+|  |  ├── 598.cookie
+|  |  ├── 599.cookie
+|  |  ├── 6.cookie
+|  |  ├── 60.cookie
+|  |  ├── 600.cookie
+|  |  ├── 601.cookie
+|  |  ├── 602.cookie
+|  |  ├── 603.cookie
+|  |  ├── 604.cookie
+|  |  ├── 605.cookie
+|  |  ├── 606.cookie
+|  |  ├── 607.cookie
+|  |  ├── 608.cookie
+|  |  ├── 609.cookie
+|  |  ├── 61.cookie
+|  |  ├── 610.cookie
+|  |  ├── 611.cookie
+|  |  ├── 612.cookie
+|  |  ├── 613.cookie
+|  |  ├── 614.cookie
+|  |  ├── 615.cookie
+|  |  ├── 616.cookie
+|  |  ├── 617.cookie
+|  |  ├── 618.cookie
+|  |  ├── 619.cookie
+|  |  ├── 62.cookie
+|  |  ├── 620.cookie
+|  |  ├── 621.cookie
+|  |  ├── 622.cookie
+|  |  ├── 623.cookie
+|  |  ├── 624.cookie
+|  |  ├── 625.cookie
+|  |  ├── 626.cookie
+|  |  ├── 627.cookie
+|  |  ├── 628.cookie
+|  |  ├── 629.cookie
+|  |  ├── 63.cookie
+|  |  ├── 630.cookie
+|  |  ├── 631.cookie
+|  |  ├── 632.cookie
+|  |  ├── 633.cookie
+|  |  ├── 64.cookie
+|  |  ├── 65.cookie
+|  |  ├── 66.cookie
+|  |  ├── 67.cookie
+|  |  ├── 68.cookie
+|  |  ├── 69.cookie
+|  |  ├── 7.cookie
+|  |  ├── 70.cookie
+|  |  ├── 71.cookie
+|  |  ├── 72.cookie
+|  |  ├── 73.cookie
+|  |  ├── 74.cookie
+|  |  ├── 75.cookie
+|  |  ├── 76.cookie
+|  |  ├── 77.cookie
+|  |  ├── 78.cookie
+|  |  ├── 79.cookie
+|  |  ├── 8.cookie
+|  |  ├── 80.cookie
+|  |  ├── 81.cookie
+|  |  ├── 82.cookie
+|  |  ├── 83.cookie
+|  |  ├── 84.cookie
+|  |  ├── 85.cookie
+|  |  ├── 86.cookie
+|  |  ├── 87.cookie
+|  |  ├── 88.cookie
+|  |  ├── 89.cookie
+|  |  ├── 9.cookie
+|  |  ├── 90.cookie
+|  |  ├── 91.cookie
+|  |  ├── 92.cookie
+|  |  ├── 93.cookie
+|  |  ├── 94.cookie
+|  |  ├── 95.cookie
+|  |  ├── 96.cookie
+|  |  ├── 97.cookie
+|  |  ├── 98.cookie
+|  |  └── 99.cookie
+|  └── daemon
+|     └── 3fa81577ac1af5d6-turbo.log.2025-01-12
+├── .vscode
+|  ├── launch.json
+|  ├── settings.json
+|  └── tasks.json
+├── CHANGELOG.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── Dockerfile
+├── Dockerfile.docs
+├── LICENSE
+├── README.md
+├── README_AR.md
+├── README_CN.md
+├── README_DE.md
+├── README_ES.md
+├── README_FR.md
+├── README_HE.md
+├── README_HU.md
+├── README_IT.md
+├── README_JA.md
+├── README_KOR.md
+├── README_PL.md
+├── README_PTBR.md
+├── README_RS.md
+├── README_RU.md
+├── README_TG.md
+├── README_TH.md
+├── README_TR.md
+├── README_VI.md
+├── SECURITY.md
+├── agent
+|  ├── .gitignore
+|  ├── content_cache
+|  ├── data
+|  |  └── db.sqlite
+|  ├── jest.config.js
+|  ├── package.json
+|  ├── src
+|  |  ├── __tests__
+|  |  |  └── client-type-identification.test.ts
+|  |  └── index.ts
+|  └── tsconfig.json
+├── characters
+|  ├── agentpulse.character.json
+|  ├── c3po.character.json
+|  ├── dobby.character.json
+|  ├── eternalai.character.json
+|  ├── tate.character.json
+|  └── trump.character.json
+├── client
+|  ├── .gitignore
+|  ├── .turbo
+|  |  └── turbo-build.log
+|  ├── components.json
+|  ├── dist
+|  |  ├── assets
+|  |  |  ├── index-BTa5OGsZ.css
+|  |  |  └── index-CqGnTrnC.js
+|  |  ├── index.html
+|  |  └── vite.svg
+|  ├── eslint.config.js
+|  ├── index.html
+|  ├── package.json
+|  ├── postcss.config.js
+|  ├── public
+|  |  └── vite.svg
+|  ├── src
+|  |  ├── Agent.tsx
+|  |  ├── Agents.tsx
+|  |  ├── App.css
+|  |  ├── App.tsx
+|  |  ├── Character.tsx
+|  |  ├── Chat.tsx
+|  |  ├── Layout.tsx
+|  |  ├── api
+|  |  |  ├── index.ts
+|  |  |  ├── mutations
+|  |  |  ├── queries
+|  |  |  ├── routes.ts
+|  |  |  └── types.ts
+|  |  ├── assets
+|  |  |  └── react.svg
+|  |  ├── components
+|  |  |  ├── app-sidebar.tsx
+|  |  |  ├── theme-toggle.tsx
+|  |  |  └── ui
+|  |  ├── hooks
+|  |  |  ├── use-mobile.tsx
+|  |  |  └── use-theme.tsx
+|  |  ├── index.css
+|  |  ├── lib
+|  |  |  └── utils.ts
+|  |  ├── main.tsx
+|  |  ├── router.tsx
+|  |  └── vite-env.d.ts
+|  ├── tailwind.config.js
+|  ├── tsconfig.app.json
+|  ├── tsconfig.json
+|  ├── tsconfig.node.json
+|  └── vite.config.ts
+├── codecov.yml
+├── commitlint.config.js
+├── docker-compose-docs.yaml
+├── docker-compose.yaml
+├── docs
+|  ├── .gitignore
+|  ├── .prettierrc.json
+|  ├── README.md
+|  ├── README_CN.md
+|  ├── README_DE.md
+|  ├── README_ES.md
+|  ├── README_FR.md
+|  ├── README_TH.md
+|  ├── api
+|  |  ├── classes
+|  |  |  ├── AgentRuntime.md
+|  |  |  ├── CacheManager.md
+|  |  |  ├── DatabaseAdapter.md
+|  |  |  ├── DbCacheAdapter.md
+|  |  |  ├── FsCacheAdapter.md
+|  |  |  ├── MemoryCacheAdapter.md
+|  |  |  ├── MemoryManager.md
+|  |  |  └── Service.md
+|  |  ├── enumerations
+|  |  |  ├── CacheStore.md
+|  |  |  ├── Clients.md
+|  |  |  ├── GoalStatus.md
+|  |  |  ├── LoggingLevel.md
+|  |  |  ├── ModelClass.md
+|  |  |  ├── ModelProviderName.md
+|  |  |  └── ServiceType.md
+|  |  ├── functions
+|  |  |  ├── addHeader.md
+|  |  |  ├── composeActionExamples.md
+|  |  |  ├── composeContext.md
+|  |  |  ├── composeRandomUser.md
+|  |  |  ├── configureSettings.md
+|  |  |  ├── createGoal.md
+|  |  |  ├── createRelationship.md
+|  |  |  ├── embed.md
+|  |  |  ├── findNearestEnvFile.md
+|  |  |  ├── formatActionNames.md
+|  |  |  ├── formatActions.md
+|  |  |  ├── formatActors.md
+|  |  |  ├── formatEvaluatorExampleDescriptions.md
+|  |  |  ├── formatEvaluatorExamples.md
+|  |  |  ├── formatEvaluatorNames.md
+|  |  |  ├── formatEvaluators.md
+|  |  |  ├── formatGoalsAsString.md
+|  |  |  ├── formatMessages.md
+|  |  |  ├── formatPosts.md
+|  |  |  ├── formatRelationships.md
+|  |  |  ├── formatTimestamp.md
+|  |  |  ├── generateCaption.md
+|  |  |  ├── generateImage.md
+|  |  |  ├── generateMessageResponse.md
+|  |  |  ├── generateObject.md
+|  |  |  ├── generateObjectArray.md
+|  |  |  ├── generateObjectDeprecated.md
+|  |  |  ├── generateShouldRespond.md
+|  |  |  ├── generateText.md
+|  |  |  ├── generateTextArray.md
+|  |  |  ├── generateTrueOrFalse.md
+|  |  |  ├── generateTweetActions.md
+|  |  |  ├── generateWebSearch.md
+|  |  |  ├── getActorDetails.md
+|  |  |  ├── getEmbeddingConfig.md
+|  |  |  ├── getEmbeddingType.md
+|  |  |  ├── getEmbeddingZeroVector.md
+|  |  |  ├── getEndpoint.md
+|  |  |  ├── getEnvVariable.md
+|  |  |  ├── getGoals.md
+|  |  |  ├── getModel.md
+|  |  |  ├── getProviders.md
+|  |  |  ├── getRelationship.md
+|  |  |  ├── getRelationships.md
+|  |  |  ├── handleProvider.md
+|  |  |  ├── hasEnvVariable.md
+|  |  |  ├── loadEnvConfig.md
+|  |  |  ├── parseActionResponseFromText.md
+|  |  |  ├── parseBooleanFromText.md
+|  |  |  ├── parseJSONObjectFromText.md
+|  |  |  ├── parseJsonArrayFromText.md
+|  |  |  ├── parseShouldRespondFromText.md
+|  |  |  ├── splitChunks.md
+|  |  |  ├── stringToUuid.md
+|  |  |  ├── trimTokens.md
+|  |  |  ├── updateGoal.md
+|  |  |  ├── validateCharacterConfig.md
+|  |  |  └── validateEnv.md
+|  |  ├── index.md
+|  |  ├── interfaces
+|  |  |  ├── Account.md
+|  |  |  ├── Action.md
+|  |  |  ├── ActionExample.md
+|  |  |  ├── ActionResponse.md
+|  |  |  ├── Actor.md
+|  |  |  ├── Content.md
+|  |  |  ├── ConversationExample.md
+|  |  |  ├── EvaluationExample.md
+|  |  |  ├── Evaluator.md
+|  |  |  ├── GenerationOptions.md
+|  |  |  ├── Goal.md
+|  |  |  ├── IAgentConfig.md
+|  |  |  ├── IAgentRuntime.md
+|  |  |  ├── IAwsS3Service.md
+|  |  |  ├── IBrowserService.md
+|  |  |  ├── ICacheAdapter.md
+|  |  |  ├── ICacheManager.md
+|  |  |  ├── IDatabaseAdapter.md
+|  |  |  ├── IDatabaseCacheAdapter.md
+|  |  |  ├── IImageDescriptionService.md
+|  |  |  ├── IMemoryManager.md
+|  |  |  ├── IPdfService.md
+|  |  |  ├── ISlackService.md
+|  |  |  ├── ISpeechService.md
+|  |  |  ├── ITextGenerationService.md
+|  |  |  ├── ITranscriptionService.md
+|  |  |  ├── IVideoService.md
+|  |  |  ├── Memory.md
+|  |  |  ├── MessageExample.md
+|  |  |  ├── Objective.md
+|  |  |  ├── Participant.md
+|  |  |  ├── Provider.md
+|  |  |  ├── Relationship.md
+|  |  |  ├── Room.md
+|  |  |  └── State.md
+|  |  ├── namespaces
+|  |  |  └── EmbeddingProvider
+|  |  ├── type-aliases
+|  |  |  ├── CacheOptions.md
+|  |  |  ├── Character.md
+|  |  |  ├── CharacterConfig.md
+|  |  |  ├── Client.md
+|  |  |  ├── EmbeddingConfig.md
+|  |  |  ├── EmbeddingProvider.md
+|  |  |  ├── EnvConfig.md
+|  |  |  ├── Handler.md
+|  |  |  ├── HandlerCallback.md
+|  |  |  ├── KnowledgeItem.md
+|  |  |  ├── Media.md
+|  |  |  ├── Model.md
+|  |  |  ├── Models.md
+|  |  |  ├── Plugin.md
+|  |  |  ├── SearchResponse.md
+|  |  |  ├── SearchResult.md
+|  |  |  ├── UUID.md
+|  |  |  └── Validator.md
+|  |  ├── typedoc-sidebar.cjs
+|  |  └── variables
+|  |     ├── CharacterSchema.md
+|  |     ├── EmbeddingProvider.md
+|  |     ├── booleanFooter.md
+|  |     ├── defaultCharacter.md
+|  |     ├── elizaLogger.md
+|  |     ├── envSchema.md
+|  |     ├── evaluationTemplate.md
+|  |     ├── knowledge.md
+|  |     ├── messageCompletionFooter.md
+|  |     ├── models.md
+|  |     ├── postActionResponseFooter.md
+|  |     ├── settings.md
+|  |     ├── shouldRespondFooter.md
+|  |     └── stringArrayFooter.md
+|  ├── babel.config.js
+|  ├── backup-sidebars-community.js
+|  ├── community
+|  |  ├── Contributors
+|  |  |  ├── eliza-council.md
+|  |  |  ├── index.md
+|  |  |  ├── inspiration.md
+|  |  |  └── profiles.mdx
+|  |  ├── Discord
+|  |  |  ├── collaborations
+|  |  |  ├── development
+|  |  |  ├── index.md
+|  |  |  ├── the_arena
+|  |  |  ├── welcome
+|  |  |  └── workinggroups
+|  |  ├── Notes
+|  |  |  ├── cookbook.md
+|  |  |  ├── lore.md
+|  |  |  └── murad2049.md
+|  |  ├── Streams
+|  |  |  ├── 10-2024
+|  |  |  ├── 11-2024
+|  |  |  ├── 12-2024
+|  |  |  └── index.md
+|  |  ├── ai-dev-school
+|  |  |  ├── index.md
+|  |  |  ├── nader_tutorial_10min.md
+|  |  |  ├── nader_tutorial_15min.md
+|  |  |  ├── part1.md
+|  |  |  ├── part2.md
+|  |  |  └── part3.md
+|  |  ├── ai16z
+|  |  |  ├── degenai
+|  |  |  ├── index.md
+|  |  |  └── pmairca
+|  |  ├── awesome-eliza.md
+|  |  ├── components
+|  |  |  ├── Accordion.tsx
+|  |  |  ├── Contributions.tsx
+|  |  |  ├── Contributor.tsx
+|  |  |  ├── Contributors.tsx
+|  |  |  ├── Hero.tsx
+|  |  |  ├── ScoreIcon.tsx
+|  |  |  ├── StatCard.tsx
+|  |  |  ├── Summary.tsx
+|  |  |  └── utils.tsx
+|  |  ├── creator-fund.md
+|  |  ├── faq-and-support.md
+|  |  └── index.md
+|  ├── docs
+|  |  ├── advanced
+|  |  |  ├── autonomous-trading.md
+|  |  |  ├── eliza-in-tee.md
+|  |  |  ├── fine-tuning.md
+|  |  |  ├── infrastructure.md
+|  |  |  └── trust-engine.md
+|  |  ├── api
+|  |  |  ├── _media
+|  |  |  ├── classes
+|  |  |  ├── enumerations
+|  |  |  ├── functions
+|  |  |  ├── globals.md
+|  |  |  ├── index.md
+|  |  |  ├── interfaces
+|  |  |  ├── type-aliases
+|  |  |  ├── typedoc-sidebar.cjs
+|  |  |  └── variables
+|  |  ├── contributing.md
+|  |  ├── core
+|  |  |  ├── actions.md
+|  |  |  ├── agents.md
+|  |  |  ├── characterfile.md
+|  |  |  ├── evaluators.md
+|  |  |  └── providers.md
+|  |  ├── faq.md
+|  |  ├── guides
+|  |  |  ├── advanced.md
+|  |  |  ├── configuration.md
+|  |  |  ├── docker-setup.md
+|  |  |  ├── local-development.md
+|  |  |  ├── secrets-management.md
+|  |  |  ├── template-configuration.md
+|  |  |  └── wsl.md
+|  |  ├── intro.md
+|  |  ├── packages
+|  |  |  ├── adapters.md
+|  |  |  ├── agent.md
+|  |  |  ├── agents.md
+|  |  |  ├── clients.md
+|  |  |  ├── core.md
+|  |  |  ├── database-adapters.md
+|  |  |  ├── packages.md
+|  |  |  └── plugins.md
+|  |  └── quickstart.md
+|  ├── docusaurus.config.js
+|  ├── package-lock.json
+|  ├── package.json
+|  ├── sidebars.js
+|  ├── sidebars.js.bak
+|  ├── src
+|  |  ├── components
+|  |  |  ├── HomepageFeatures
+|  |  |  └── HomepageHeader
+|  |  ├── css
+|  |  |  └── custom.css
+|  |  └── pages
+|  |     ├── index.jsx
+|  |     ├── index.module.css
+|  |     └── markdown-page.md
+|  └── static
+|     ├── .nojekyll
+|     └── img
+|        ├── ai16z_heroshot.png
+|        ├── background.jpg
+|        ├── blurback.png
+|        ├── discord_llm_pipeline2.jpg
+|        ├── e_black.png
+|        ├── e_white.png
+|        ├── elijah.jpg
+|        ├── eliza_banner.jpg
+|        ├── eliza_diagram.jpg
+|        ├── eliza_in_tee.jpg
+|        ├── favicon.ico
+|        ├── favicon_old.ico
+|        ├── funnel.jpg
+|        ├── journey.jpg
+|        ├── logo.svg
+|        ├── overload2.jpg
+|        ├── tokenomics1.jpg
+|        ├── tokenomics2.jpg
+|        └── website_v1.jpg
+├── eslint.config.mjs
+├── lerna.json
+├── package.json
+├── packages
+|  ├── .DS_Store
+|  ├── _examples
+|  |  └── plugin
+|  |     ├── .npmignore
+|  |     ├── README.md
+|  |     ├── eslint.config.mjs
+|  |     ├── package.json
+|  |     ├── src
+|  |     ├── tsconfig.json
+|  |     └── tsup.config.ts
+|  ├── adapter-postgres
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── config.toml
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── migrations
+|  |  |  └── 20240318103238_remote_schema.sql
+|  |  ├── package.json
+|  |  ├── schema.sql
+|  |  ├── seed.sql
+|  |  ├── src
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── adapter-redis
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── adapter-sqlite
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── index.ts
+|  |  |  ├── sqliteTables.ts
+|  |  |  └── sqlite_vec.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── adapter-sqljs
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── index.ts
+|  |  |  ├── sqliteTables.ts
+|  |  |  └── types.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── adapter-supabase
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── config.toml
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── schema.sql
+|  |  ├── seed.sql
+|  |  ├── src
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── agentpulse-core
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── index.ts
+|  |  |  ├── plugins
+|  |  |  ├── providers
+|  |  |  └── types.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── client-auto
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── client-direct
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── README.md
+|  |  |  ├── api.ts
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── client-discord
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── attachments.ts
+|  |  |  ├── constants.ts
+|  |  |  ├── environment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── messages.ts
+|  |  |  ├── providers
+|  |  |  ├── templates.ts
+|  |  |  ├── utils.ts
+|  |  |  └── voice.ts
+|  |  ├── tsconfig.json
+|  |  ├── tsup.config.bundled_lfktmhu330q.mjs
+|  |  └── tsup.config.ts
+|  ├── client-farcaster
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── _esm-GOPLUTRN.js
+|  |  |  ├── _esm-GOPLUTRN.js.map
+|  |  |  ├── ccip-EUSABVOD.js
+|  |  |  ├── ccip-EUSABVOD.js.map
+|  |  |  ├── chunk-OKWGBTKX.js
+|  |  |  ├── chunk-OKWGBTKX.js.map
+|  |  |  ├── chunk-PR4QN5HX.js
+|  |  |  ├── chunk-PR4QN5HX.js.map
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  ├── index.js.map
+|  |  |  ├── secp256k1-5HNE4PLH.js
+|  |  |  └── secp256k1-5HNE4PLH.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions.ts
+|  |  |  ├── client.ts
+|  |  |  ├── index.ts
+|  |  |  ├── interactions.ts
+|  |  |  ├── memory.ts
+|  |  |  ├── post.ts
+|  |  |  ├── prompts.ts
+|  |  |  ├── types.ts
+|  |  |  └── utils.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── client-github
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── environment.ts
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── client-lens
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── _esm-GOPLUTRN.js
+|  |  |  ├── _esm-GOPLUTRN.js.map
+|  |  |  ├── ccip-MMGH6DXX.js
+|  |  |  ├── ccip-MMGH6DXX.js.map
+|  |  |  ├── chunk-4L6P6TY5.js
+|  |  |  ├── chunk-4L6P6TY5.js.map
+|  |  |  ├── chunk-NTU6R7BC.js
+|  |  |  ├── chunk-NTU6R7BC.js.map
+|  |  |  ├── chunk-PR4QN5HX.js
+|  |  |  ├── chunk-PR4QN5HX.js.map
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  ├── index.js.map
+|  |  |  ├── secp256k1-QUTB2QC2.js
+|  |  |  └── secp256k1-QUTB2QC2.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions.ts
+|  |  |  ├── client.ts
+|  |  |  ├── index.ts
+|  |  |  ├── interactions.ts
+|  |  |  ├── memory.ts
+|  |  |  ├── post.ts
+|  |  |  ├── prompts.ts
+|  |  |  ├── providers
+|  |  |  ├── types.ts
+|  |  |  └── utils.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── client-slack
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  └── index.js
+|  |  ├── eslint.config.mjs
+|  |  ├── jest.config.js
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── attachments.ts
+|  |  |  ├── environment.ts
+|  |  |  ├── events.ts
+|  |  |  ├── examples
+|  |  |  ├── index.ts
+|  |  |  ├── messages.ts
+|  |  |  ├── providers
+|  |  |  ├── services
+|  |  |  ├── templates.ts
+|  |  |  ├── tests
+|  |  |  ├── types
+|  |  |  └── utils
+|  |  └── tsconfig.json
+|  ├── client-telegram
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── config
+|  |  |  ├── constants.ts
+|  |  |  ├── environment.ts
+|  |  |  ├── getOrCreateRecommenderInBe.ts
+|  |  |  ├── index.ts
+|  |  |  ├── messageManager.ts
+|  |  |  ├── telegramClient.ts
+|  |  |  └── utils.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── client-twitter
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── base.ts
+|  |  |  ├── environment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── interactions.ts
+|  |  |  ├── plugins
+|  |  |  ├── post.ts
+|  |  |  ├── search.ts
+|  |  |  ├── spaces.ts
+|  |  |  └── utils.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── content_cache
+|  ├── core
+|  |  ├── .env.test
+|  |  ├── .gitignore
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README-TESTS.md
+|  |  ├── cache
+|  |  |  └── fast-bge-small-en-v1.5
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── elizaConfig.example.yaml
+|  |  ├── eslint.config.mjs
+|  |  ├── nodemon.json
+|  |  ├── package.json
+|  |  ├── renovate.json
+|  |  ├── src
+|  |  |  ├── actions.ts
+|  |  |  ├── cache.ts
+|  |  |  ├── config.ts
+|  |  |  ├── context.ts
+|  |  |  ├── database
+|  |  |  ├── database.ts
+|  |  |  ├── defaultCharacter.ts
+|  |  |  ├── embedding.ts
+|  |  |  ├── environment.ts
+|  |  |  ├── evaluators.ts
+|  |  |  ├── generation.ts
+|  |  |  ├── goals.ts
+|  |  |  ├── index.ts
+|  |  |  ├── knowledge.ts
+|  |  |  ├── logger.ts
+|  |  |  ├── memory.ts
+|  |  |  ├── messages.ts
+|  |  |  ├── models.ts
+|  |  |  ├── parsing.ts
+|  |  |  ├── posts.ts
+|  |  |  ├── providers.ts
+|  |  |  ├── relationships.ts
+|  |  |  ├── runtime.ts
+|  |  |  ├── settings.ts
+|  |  |  ├── test_resources
+|  |  |  ├── tests
+|  |  |  ├── types.ts
+|  |  |  ├── utils.ts
+|  |  |  └── uuid.ts
+|  |  ├── tsconfig.build.json
+|  |  ├── tsconfig.json
+|  |  ├── tsup.config.ts
+|  |  ├── types
+|  |  |  └── index.d.ts
+|  |  └── vitest.config.ts
+|  ├── create-eliza-app
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.cjs
+|  |  |  └── index.mjs
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── registry
+|  |  |  └── eliza.json
+|  |  ├── src
+|  |  |  └── index.ts
+|  |  └── tsconfig.json
+|  ├── debug_audio
+|  ├── plugin-0g
+|  |  ├── .DS_Store
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── index.ts
+|  |  |  └── templates
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-3d-generation
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── constants.ts
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-abstract
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── _esm-L4OBJJWB.js
+|  |  |  ├── _esm-L4OBJJWB.js.map
+|  |  |  ├── ccip-K342TZJI.js
+|  |  |  ├── ccip-K342TZJI.js.map
+|  |  |  ├── chunk-44P3KVL7.js
+|  |  |  ├── chunk-44P3KVL7.js.map
+|  |  |  ├── chunk-4L6P6TY5.js
+|  |  |  ├── chunk-4L6P6TY5.js.map
+|  |  |  ├── chunk-PR4QN5HX.js
+|  |  |  ├── chunk-PR4QN5HX.js.map
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  ├── index.js.map
+|  |  |  ├── secp256k1-QUTB2QC2.js
+|  |  |  └── secp256k1-QUTB2QC2.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── environment.ts
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-aptos
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── constants.ts
+|  |  |  ├── enviroment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  └── tests
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-avalanche
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── ccip-UTQEEQUV.js
+|  |  |  ├── chunk-RLU2MBUH.js
+|  |  |  └── index.js
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── environment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  ├── types
+|  |  |  └── utils
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-bootstrap
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── evaluators
+|  |  |  ├── index.ts
+|  |  |  ├── plugins
+|  |  |  └── providers
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-coinbase
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── advanced-sdk-ts
+|  |  |  ├── .eslintrc.js
+|  |  |  ├── .gitignore
+|  |  |  ├── .prettierrc
+|  |  |  ├── CHANGELOG.md
+|  |  |  ├── README.md
+|  |  |  ├── package.json
+|  |  |  ├── src
+|  |  |  └── tsconfig.json
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── constants.ts
+|  |  |  ├── index.ts
+|  |  |  ├── plugins
+|  |  |  ├── templates.ts
+|  |  |  ├── types.ts
+|  |  |  └── utils.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-conflux
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── _esm-L4OBJJWB.js
+|  |  |  ├── _esm-L4OBJJWB.js.map
+|  |  |  ├── ccip-Z6D5R2QD.js
+|  |  |  ├── ccip-Z6D5R2QD.js.map
+|  |  |  ├── chunk-2OJMP5IQ.js
+|  |  |  ├── chunk-2OJMP5IQ.js.map
+|  |  |  ├── chunk-4L6P6TY5.js
+|  |  |  ├── chunk-4L6P6TY5.js.map
+|  |  |  ├── chunk-PR4QN5HX.js
+|  |  |  ├── chunk-PR4QN5HX.js.map
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  ├── index.js.map
+|  |  |  ├── secp256k1-QUTB2QC2.js
+|  |  |  └── secp256k1-QUTB2QC2.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── abi
+|  |  |  ├── actions
+|  |  |  ├── index.ts
+|  |  |  ├── templates
+|  |  |  └── types.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-cronoszkevm
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── enviroment.ts
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-echochambers
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── LICENSE
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── echoChamberClient.ts
+|  |  |  ├── environment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── interactions.ts
+|  |  |  └── types.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-evm
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  ├── templates
+|  |  |  ├── tests
+|  |  |  └── types
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-ferePro
+|  |  └── README.md
+|  ├── plugin-flow
+|  |  ├── .gitignore
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── flow.json
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── assets
+|  |  |  ├── environment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  ├── queries.ts
+|  |  |  ├── templates
+|  |  |  ├── tests
+|  |  |  └── types
+|  |  ├── tsconfig.json
+|  |  ├── tsup.config.ts
+|  |  └── vitest.config.ts
+|  ├── plugin-fuel
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  ├── templates
+|  |  |  └── tests
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-gitbook
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  └── types.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-goat
+|  |  ├── .DS_Store
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions.ts
+|  |  |  ├── index.ts
+|  |  |  └── wallet.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-icp
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── apis
+|  |  |  ├── canisters
+|  |  |  ├── constants
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  ├── types.ts
+|  |  |  └── utils
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-image-generation
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.MD
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── environment.ts
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-intiface
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── intiface-engine
+|  |  |  ├── CHANGELOG.md
+|  |  |  ├── README.md
+|  |  |  └── intiface-engine
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── environment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── intiface-user-device-config.json
+|  |  |  └── utils.ts
+|  |  ├── test
+|  |  |  ├── buttplug-user-device-config-test.json
+|  |  |  ├── fake-buttplug.ts
+|  |  |  └── simulate.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-multiversx
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── enviroment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  ├── tests
+|  |  |  └── utils
+|  |  ├── tsconfig.json
+|  |  ├── tsup.config.bundled_uakxshagez.mjs
+|  |  └── tsup.config.ts
+|  ├── plugin-near
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.cjs
+|  |  |  ├── index.cjs.map
+|  |  |  ├── index.d.cts
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── environment.ts
+|  |  |  ├── index.ts
+|  |  |  └── providers
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-nft-generation
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── api.ts
+|  |  |  ├── handlers
+|  |  |  ├── index.ts
+|  |  |  └── provider
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-node
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── chunk-PLDDJCW6.js
+|  |  |  ├── chunk-PLDDJCW6.js.map
+|  |  |  ├── chunk-W2OETGYU.js
+|  |  |  ├── chunk-W2OETGYU.js.map
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  ├── index.js.map
+|  |  |  ├── node-ponyfill-XYSXBJLI.js
+|  |  |  ├── node-ponyfill-XYSXBJLI.js.map
+|  |  |  ├── wrapper-IANJ3KLP.js
+|  |  |  └── wrapper-IANJ3KLP.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── scripts
+|  |  |  └── postinstall.js
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── echogarden.d.ts
+|  |  |  ├── environment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── services
+|  |  |  ├── templates.ts
+|  |  |  ├── types.ts
+|  |  |  └── vendor
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-solana
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.MD
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── bignumber.ts
+|  |  |  ├── environment.ts
+|  |  |  ├── evaluators
+|  |  |  ├── index.ts
+|  |  |  ├── keypairUtils.ts
+|  |  |  ├── providers
+|  |  |  ├── tests
+|  |  |  └── types
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-starknet
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── environment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  ├── types
+|  |  |  └── utils
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-story
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── Readme.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── functions
+|  |  |  ├── index.ts
+|  |  |  ├── lib
+|  |  |  ├── providers
+|  |  |  ├── queries.ts
+|  |  |  ├── templates
+|  |  |  ├── tests
+|  |  |  └── types
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-sui
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── enviroment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  ├── tests
+|  |  |  └── utils.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-tee
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── _esm-L4OBJJWB.js
+|  |  |  ├── _esm-L4OBJJWB.js.map
+|  |  |  ├── ccip-MMGH6DXX.js
+|  |  |  ├── ccip-MMGH6DXX.js.map
+|  |  |  ├── chunk-4L6P6TY5.js
+|  |  |  ├── chunk-4L6P6TY5.js.map
+|  |  |  ├── chunk-NTU6R7BC.js
+|  |  |  ├── chunk-NTU6R7BC.js.map
+|  |  |  ├── chunk-PR4QN5HX.js
+|  |  |  ├── chunk-PR4QN5HX.js.map
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  ├── index.js.map
+|  |  |  ├── secp256k1-QUTB2QC2.js
+|  |  |  └── secp256k1-QUTB2QC2.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  └── types
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-ton
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── enviroment.ts
+|  |  |  ├── index.ts
+|  |  |  ├── providers
+|  |  |  └── tests
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-trustdb
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── adapters
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-twitter
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── actions
+|  |  |  ├── index.ts
+|  |  |  ├── templates.ts
+|  |  |  └── types.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-video-generation
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── constants.ts
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-web-search
+|  |  ├── .npmignore
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── README.MD
+|  |  |  └── index.ts
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── plugin-whatsapp
+|  |  ├── .turbo
+|  |  |  └── turbo-build.log
+|  |  ├── README.md
+|  |  ├── dist
+|  |  |  ├── index.d.ts
+|  |  |  ├── index.js
+|  |  |  └── index.js.map
+|  |  ├── eslint.config.mjs
+|  |  ├── package.json
+|  |  ├── src
+|  |  |  ├── client.ts
+|  |  |  ├── handlers
+|  |  |  ├── index.ts
+|  |  |  ├── types.ts
+|  |  |  └── utils
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  └── plugin-zksync-era
+|     ├── .turbo
+|     |  └── turbo-build.log
+|     ├── README.md
+|     ├── dist
+|     |  ├── index.d.ts
+|     |  ├── index.js
+|     |  └── index.js.map
+|     ├── package.json
+|     ├── src
+|     |  ├── actions
+|     |  ├── enviroment.ts
+|     |  └── index.ts
+|     ├── tsconfig.json
+|     └── tsup.config.ts
+├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
+├── prettier.config.cjs
+├── renovate.json
+├── scripts
+|  ├── clean.sh
+|  ├── derive-keys.js
+|  ├── dev.sh
+|  ├── docker.sh
+|  ├── extracttweets.js
+|  ├── generatecharacter.js
+|  ├── gettweets.mjs
+|  ├── integrationTests.sh
+|  ├── jsdoc-automation
+|  |  ├── .example.env
+|  |  ├── .gitignore
+|  |  ├── README.md
+|  |  ├── package.json
+|  |  ├── pnpm-lock.yaml
+|  |  ├── pnpm-workspace.yaml
+|  |  ├── src
+|  |  |  ├── AIService.ts
+|  |  |  ├── Configuration.ts
+|  |  |  ├── DirectoryTraversal.ts
+|  |  |  ├── DocumentationGenerator.ts
+|  |  |  ├── GitManager.ts
+|  |  |  ├── JSDocValidator.ts
+|  |  |  ├── JsDocAnalyzer.ts
+|  |  |  ├── JsDocGenerator.ts
+|  |  |  ├── PluginDocumentationGenerator.ts
+|  |  |  ├── TypeScriptFileIdentifier.ts
+|  |  |  ├── TypeScriptParser.ts
+|  |  |  ├── index.ts
+|  |  |  ├── types
+|  |  |  └── utils
+|  |  ├── tsconfig.json
+|  |  └── tsup.config.ts
+|  ├── lint.sh
+|  ├── migrateCache.js
+|  ├── smokeTests.sh
+|  ├── start.sh
+|  ├── test.sh
+|  ├── tweet_scraped.json
+|  ├── tweet_scraped_clean.json
+|  └── update-versions.js
+├── tests
+|  ├── README.md
+|  ├── test1.mjs
+|  └── testLibrary.mjs
+├── tsconfig.json
+└── turbo.json
+
+directory: 12742 file: 42193 symboliclink: 255
+
+ignored: directory (563)
