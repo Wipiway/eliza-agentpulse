@@ -1,4 +1,10 @@
-import { Provider, IAgentRuntime, Memory, State } from "@elizaos/core";
+import {
+    Provider,
+    IAgentRuntime,
+    Memory,
+    State,
+    elizaLogger,
+} from "@elizaos/core";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 import type { TokenData } from "../types";
 
@@ -76,7 +82,10 @@ ${token.description ? `• Description: ${token.description}` : ""}
         state?: State
     ): Promise<string> {
         try {
-            console.log("**** ikoooos -- Getting token data");
+            elizaLogger.log(
+                " **** ikooos --- Retrieving token data from AgentPulse..."
+            );
+
             const tokens = await this.fetchWithCache<TokenData[]>(
                 "latest_tokens",
                 () => this.getLatestTokens()
@@ -84,7 +93,7 @@ ${token.description ? `• Description: ${token.description}` : ""}
 
             return this.formatTokenAnalysis(tokens);
         } catch (error) {
-            console.error("Token data provider error:", error);
+            elizaLogger.error("Token data provider error:", error);
             return "Token data temporarily unavailable. probably nothing ser 👀";
         }
     }
