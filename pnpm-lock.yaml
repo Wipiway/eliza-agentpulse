@@ -524,13 +524,12 @@ importers:
       '@elizaos/core':
         specifier: workspace:*
         version: link:../core
-      '@supabase/supabase-js':
-        specifier: ^2.39.0
-        version: 2.46.2(bufferutil@4.0.9)(utf-8-validate@5.0.10)
-    devDependencies:
       tsup:
         specifier: 8.3.5
         version: 8.3.5(@swc/core@1.10.7(@swc/helpers@0.5.15))(jiti@2.4.2)(postcss@8.4.49)(typescript@5.6.3)(yaml@2.7.0)
+      whatwg-url:
+        specifier: 7.1.0
+        version: 7.1.0
 
   packages/client-auto:
     dependencies:

@@ -1,7 +1,14 @@
-import { agentPulsePlugin } from "./plugins/token-data";
+import { Plugin } from "@elizaos/core";
+import { newTokenDataAction } from "./actions/newTokenData.ts";
 
-export * from "./plugins/token-data";
-export * from "./providers/token-data";
-export * from "./types";
+export * as actions from "./actions";
+export * as evaluators from "./evaluators";
+export * as providers from "./providers";
 
-export default agentPulsePlugin;
+export const agentpulseCorePlugin: Plugin = {
+    name: "agentpulse-core",
+    description: "Core agentpulse plugin to fetch AI Agents token data",
+    actions: [newTokenDataAction],
+    evaluators: [],
+    providers: [],
+};
