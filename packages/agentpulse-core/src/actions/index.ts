@@ -1,8 +1,3 @@
-export * from "./continue.ts";
-export * from "./followRoom.ts";
-export * from "./ignore.ts";
-export * from "./muteRoom.ts";
-export * from "./none.ts";
-export * from "./unfollowRoom.ts";
-export * from "./unmuteRoom.ts";
-export * from "./newTokenData.ts";
+export * from "./newTokenData";
+
+console.log("Step 3.1: Actions index loaded successfully");

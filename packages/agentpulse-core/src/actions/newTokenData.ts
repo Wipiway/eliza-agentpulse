@@ -5,6 +5,8 @@ import {
     type Action,
 } from "@elizaos/core";
 
+console.log("Step 3: Loading newTokenDataAction module");
+
 export const newTokenDataAction: Action = {
     name: "NEW_TOKEN_DATA",
     similes: [
@@ -16,7 +18,10 @@ export const newTokenDataAction: Action = {
         "DEFAULT",
     ],
     validate: async (_runtime: IAgentRuntime, _message: Memory) => {
-        console.log("****** IKOOOSSS!!!");
+        console.log(
+            "Step 5: Validate method called for NEW_TOKEN_DATA action",
+            _message
+        );
         return true;
     },
     description:
@@ -25,6 +30,7 @@ export const newTokenDataAction: Action = {
         _runtime: IAgentRuntime,
         _message: Memory
     ): Promise<string> => {
+        console.log("Step 6: Handler method called for NEW_TOKEN_DATA action");
         const tokenData = `
             Token: IKOS
             Price: 20000
@@ -105,3 +111,8 @@ export const newTokenDataAction: Action = {
         ],
     ] as ActionExample[][],
 } as Action;
+
+console.log("Step 4: newTokenDataAction configured:", {
+    name: newTokenDataAction.name,
+    similesCount: newTokenDataAction.similes.length,
+});
