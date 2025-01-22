@@ -17,6 +17,26 @@ import { buildConversationThread } from "./utils.ts";
 import { twitterMessageHandlerTemplate } from "./interactions.ts";
 import { DEFAULT_MAX_TWEET_LENGTH } from "./environment.ts";
 
+// const twitterPostTemplate = `
+// # Areas of Expertise
+// {{knowledge}}
+
+// # About {{agentName}} (@{{twitterUserName}}):
+// {{bio}}
+// {{lore}}
+// {{topics}}
+
+// {{providers}}
+
+// {{characterPostExamples}}
+
+// {{postDirections}}
+
+// # Task: Generate a post in the voice and style and perspective of {{agentName}} @{{twitterUserName}}.
+// Write a post that is {{adjective}} about {{topic}} (without mentioning {{topic}} directly), from the perspective of {{agentName}}. Do not add commentary or acknowledge this request, just write the post.
+// Your response should be 1, 2, or 3 sentences (choose the length at random).
+// Your response should not contain any questions. Brief, concise statements only. The total character count MUST be less than {{maxTweetLength}}. No emojis. Use \\n\\n (double spaces) between statements if there are multiple statements in your response.`;
+
 const twitterPostTemplate = `
 # Areas of Expertise
 {{knowledge}}
@@ -33,9 +53,24 @@ const twitterPostTemplate = `
 {{postDirections}}
 
 # Task: Generate a post in the voice and style and perspective of {{agentName}} @{{twitterUserName}}.
-Write a post that is {{adjective}} about {{topic}} (without mentioning {{topic}} directly), from the perspective of {{agentName}}. Do not add commentary or acknowledge this request, just write the post.
-Your response should be 1, 2, or 3 sentences (choose the length at random).
-Your response should not contain any questions. Brief, concise statements only. The total character count MUST be less than {{maxTweetLength}}. No emojis. Use \\n\\n (double spaces) between statements if there are multiple statements in your response.`;
+Write a detailed analysis of a recently launched token with the following format:
+
+[Time Indicator] Virtuals Token Launch - [Token Name] ($SYMBOL)
+
+Core Utility:
+[Brief description of token's main purpose/utility]
+
+[Evaluate the token's legitimacy signals with checkmarks. Use ✅ for positive signals and ❌ for concerns or red flags. Consider:
+- Documentation quality and technical details
+- Team transparency and background
+- Development progress and GitHub activity
+- Community engagement and social presence
+- Implementation clarity and feasibility
+Each point should be a clear statement with a checkmark, not just a label]
+
+Key Highlight: [One standout feature or critical observation about the project]
+
+Note: Use double line breaks (\\n\\n) between sections. The total character count MUST be less than {{maxTweetLength}}. Each section should start on a new line. Keep analysis objective and specific.`;
 
 export const twitterActionTemplate =
     `
@@ -62,7 +97,8 @@ Actions (respond only with tags):
 Tweet:
 {{currentTweet}}
 
-# Respond with qualifying action tags only. Default to NO action unless extremely confident of relevance.` + postActionResponseFooter;
+# Respond with qualifying action tags only. Default to NO action unless extremely confident of relevance.` +
+    postActionResponseFooter;
 
 /**
  * Truncate text to fit within the Twitter character limit, ensuring it ends at a complete sentence.
@@ -111,7 +147,7 @@ export class TwitterPostClient {
         this.client = client;
         this.runtime = runtime;
         this.twitterUsername = this.client.twitterConfig.TWITTER_USERNAME;
-        this.isDryRun = this.client.twitterConfig.TWITTER_DRY_RUN
+        this.isDryRun = this.client.twitterConfig.TWITTER_DRY_RUN;
 
         // Log configuration on initialization
         elizaLogger.log("Twitter Client Configuration:");
@@ -165,7 +201,11 @@ export class TwitterPostClient {
                 minMinutes;
             const delay = randomMinutes * 60 * 1000;
 
+            console.log("**** lastPostTimestamp:", lastPostTimestamp);
+            console.log("**** Date.now():", Date.now());
+
             if (Date.now() > lastPostTimestamp + delay) {
+                console.log("**** generating new tweet");
                 await this.generateNewTweet();
             }
 
@@ -188,8 +228,9 @@ export class TwitterPostClient {
                             `Next action processing scheduled in ${actionInterval} minutes`
                         );
                         // Wait for the full interval before next processing
-                        await new Promise((resolve) =>
-                            setTimeout(resolve, actionInterval * 60 * 1000) // now in minutes
+                        await new Promise(
+                            (resolve) =>
+                                setTimeout(resolve, actionInterval * 60 * 1000) // now in minutes
                         );
                     }
                 } catch (error) {
@@ -215,7 +256,10 @@ export class TwitterPostClient {
             elizaLogger.log("Tweet generation loop disabled (dry run mode)");
         }
 
-        if (this.client.twitterConfig.ENABLE_ACTION_PROCESSING && !this.isDryRun) {
+        if (
+            this.client.twitterConfig.ENABLE_ACTION_PROCESSING &&
+            !this.isDryRun
+        ) {
             processActionsLoop().catch((error) => {
                 elizaLogger.error(
                     "Fatal error in process actions loop:",
@@ -402,17 +446,21 @@ export class TwitterPostClient {
      */
     private async generateNewTweet() {
         elizaLogger.log("Generating new tweet");
+        console.log("***** Generating new tweet!!! ");
 
         try {
             const roomId = stringToUuid(
                 "twitter_generate_room-" + this.client.profile.username
             );
+            console.log("***** STEP 1: roomId:", roomId);
             await this.runtime.ensureUserExists(
                 this.runtime.agentId,
                 this.client.profile.username,
                 this.runtime.character.name,
                 "twitter"
             );
+
+            console.log("***** STEP 2: ensureUserExists");
 
             const topics = this.runtime.character.topics.join(", ");
 
@@ -438,6 +486,8 @@ export class TwitterPostClient {
                     twitterPostTemplate,
             });
 
+            console.log("***** STEP 3: composeState");
+
             elizaLogger.debug("generate post prompt:\n" + context);
 
             const newTweetContent = await generateText({
@@ -445,6 +495,8 @@ export class TwitterPostClient {
                 context,
                 modelClass: ModelClass.SMALL,
             });
+
+            console.log("***** STEP 4: generateText");
 
             // First attempt to clean content
             let cleanedContent = "";
@@ -468,6 +520,8 @@ export class TwitterPostClient {
                     .trim();
             }
 
+            console.log("***** STEP 5: cleanedContent:", cleanedContent);
+
             if (!cleanedContent) {
                 elizaLogger.error(
                     "Failed to extract valid content from response:",
@@ -480,13 +534,15 @@ export class TwitterPostClient {
             }
 
             // Truncate the content to the maximum tweet length specified in the environment settings, ensuring the truncation respects sentence boundaries.
-            const maxTweetLength = this.client.twitterConfig.MAX_TWEET_LENGTH
+            const maxTweetLength = this.client.twitterConfig.MAX_TWEET_LENGTH;
             if (maxTweetLength) {
                 cleanedContent = truncateToCompleteSentence(
                     cleanedContent,
                     maxTweetLength
                 );
             }
+
+            console.log("***** STEP 6: truncateToCompleteSentence");
 
             const removeQuotes = (str: string) =>
                 str.replace(/^['"](.*)['"]$/, "$1");
@@ -503,6 +559,8 @@ export class TwitterPostClient {
                 return;
             }
 
+            console.log("***** STEP 7: isDryRun");
+
             try {
                 elizaLogger.log(`Posting new tweet:\n ${cleanedContent}`);
                 this.postTweet(
@@ -516,6 +574,8 @@ export class TwitterPostClient {
             } catch (error) {
                 elizaLogger.error("Error sending tweet:", error);
             }
+
+            console.log("***** STEP 8: catch");
         } catch (error) {
             elizaLogger.error("Error generating new tweet:", error);
         }

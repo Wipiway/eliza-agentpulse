@@ -1,5 +1,7 @@
 import { Plugin } from "@elizaos/core";
 import { newTokenDataAction } from "./actions/newTokenData";
+import { providers } from "@elizaos/plugin-bootstrap";
+import { newTokenDataProvider } from "./providers/newTokenDataProvider";
 
 // Export individual components (even if empty for now)
 export * as actions from "./actions";
@@ -10,9 +12,9 @@ export * as providers from "./providers";
 export const agentpulseCorePlugin: Plugin = {
     name: "agentpulse-core",
     description: "Core agentpulse plugin to fetch AI Agents token data",
-    actions: [newTokenDataAction],
+    actions: [],
     evaluators: [],
-    providers: [],
+    providers: [providers.timeProvider, newTokenDataProvider],
 };
 
 // You can keep your console.logs if needed

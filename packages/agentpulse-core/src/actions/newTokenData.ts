@@ -1,8 +1,10 @@
 import {
     ActionExample,
     IAgentRuntime,
+    HandlerCallback,
     Memory,
     type Action,
+    State,
 } from "@elizaos/core";
 
 console.log("Step 3: Loading newTokenDataAction module");
@@ -28,8 +30,11 @@ export const newTokenDataAction: Action = {
         "Get info for some recent small-cap AI Agent tokens launched on the Virtuals Protocol",
     handler: async (
         _runtime: IAgentRuntime,
-        _message: Memory
-    ): Promise<string> => {
+        _message: Memory,
+        state: State,
+        options: any,
+        callback: HandlerCallback
+    ) => {
         console.log("Step 6: Handler method called for NEW_TOKEN_DATA action");
         const tokenData = `
             Token: IKOS
@@ -48,6 +53,28 @@ export const newTokenDataAction: Action = {
             Project: Virtuals
             Agent: ZAZU
         `;
+
+        callback?.({
+            text: "THIS IS MY ONLY CUSTOM RESPONSE!!!!!",
+        });
+
+        console.log("Step 7: MESSAGE - ", _message);
+
+        // // Create a new message with the response
+        // await _runtime.messageManager.createMemory({
+        //     id: _message.id,
+        //     content: { text: "THIS IS MY ONLY CUSTOM RESPONSE!!!!!" },
+        //     roomId: _message.roomId,
+        //     userId: _message.userId,
+        //     agentId: _runtime.agentId,
+        // });
+
+        // // Update the message content directly
+        // _message.content = {
+        //     text: "THIS IS MY ONLY CUSTOM RESPONSE!!!!!",
+        //     action: "NEW_TOKEN_DATA",
+        // };
+
         return tokenData;
     },
     examples: [
